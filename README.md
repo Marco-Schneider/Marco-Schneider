@@ -27,6 +27,8 @@
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)&nbsp;
 
 <br>
+<br>
+<br>
 
 <p align="left">
 <img width="530em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=marco-schneider&layout=compact&theme=github_dark_dimmed" alt="marco-schneider's stats"/>
