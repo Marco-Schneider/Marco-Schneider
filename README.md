@@ -4,7 +4,7 @@
 
 <br>
 
-- 🤖 As a <strong>Mechatronics Engineering student</strong> with hands-on experience building robots, I'm currently helping with the development of a <strong>line follower robot named Arthas</strong>
+- 🤖 I'm a <strong>Mechatronics Engineering student</strong> with hands-on experience building robots, I'm currently helping with the development of a <strong>line follower robot named Arthas</strong>
 
 - 🎮 Recently, I've also been learning game development in my free time and hope to apply these skills to create immersive, interactive experiences
 
