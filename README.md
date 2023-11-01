@@ -10,7 +10,7 @@
 
 - 🔭 I’m currently working at ExxonMobil as a trainee
 
-- 💬 Ask me about **C, C++, Python, JavaScript, HTML, CSS, WoW**
+- 💬 Ask me about **C, C++, Python, Angular, C#, WoW**
 
 - ⚡ Fun fact: I've been playing <strong>World Of Warcraft</strong> for over a decade. I started playing it back in 2011, when I was 11 years old
 
