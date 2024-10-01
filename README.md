@@ -8,7 +8,7 @@
 
 - 🎮 Recently, I've also been learning game development in my free time and hope to apply these skills to create immersive, interactive experiences
 
-- 🔭 I’m currently working at ExxonMobil as a trainee
+- 🔭 I’m currently working at ExxonMobil as a Junior Full-Stacl Web Developer (.NET/E.F/Angular)
 
 - 💬 Ask me about **C, C++, Python, Angular, C#, WoW**
 
