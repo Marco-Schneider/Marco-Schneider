@@ -4,11 +4,11 @@
 
 <br>
 
-- 🤖 I'm a <strong>Mechatronics Engineering student</strong> with hands-on experience building robots, I'm currently helping with the development of a <strong>line follower robot named Arthas</strong>
+- 🤖 I'm a <strong>Mechatronics Engineer</strong> with hands-on experience building robots
 
 - 🎮 Recently, I've also been learning game development in my free time and hope to apply these skills to create immersive, interactive experiences
 
-- 🔭 I’m currently working at ExxonMobil as a Junior Full-Stacl Web Developer (.NET/E.F/Angular)
+- 🔭 I’m currently working at ExxonMobil as a Full-Stack Web Developer (.NET &Angular)
 
 - 💬 Ask me about **C, C++, Python, Angular, C#, WoW**
 
