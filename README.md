@@ -1,5 +1,3 @@
-<img align="right" height="590em" src="https://raw.githubusercontent.com/gist/Marco-Schneider/879918331de5e780956490cb671c1e2e/raw/b09b959b2b703cf57c84501fa7ce4ac7ad359821/githubCard.svg"/>
-
 <h1 align="left">Hi <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" height="30px">, I'm Marco Schneider</h1>
 
 <br>
