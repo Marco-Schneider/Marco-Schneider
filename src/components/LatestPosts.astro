@@ -32,67 +32,78 @@ const posts = (await getCollection('blog'))
 <style>
     .section {
         padding: 40px 0;
-        border-bottom: 0.5px solid var(--border);
+        margin: 20px 0;
     }
     .section-label {
-        font-size: 10px;
-        font-weight: 500;
+        font-size: 12px;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--teal-400);
-        margin-bottom: 18px;
+        letter-spacing: 0.15em;
+        color: var(--accent-main);
+        margin-bottom: 24px;
     }
     .posts {
         display: flex;
         flex-direction: column;
+        gap: 12px;
     }
     .post {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 14px 0;
-        border-bottom: 0.5px solid var(--border);
+        padding: 20px 24px;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        color: inherit;
     }
-    .post:first-child {
-        border-top: 0.5px solid var(--border);
+    .post:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent-main);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 10px var(--accent-glow);
     }
     .post:hover .title {
-        color: var(--teal-600);
+        color: var(--accent-main);
     }
     .post-left {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
     }
     .cat {
         display: inline-block;
         font-size: 10px;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.07em;
-        background: var(--teal-50);
-        color: var(--teal-800);
-        padding: 2px 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--accent-secondary);
+        padding: 4px 10px;
         border-radius: 99px;
+        border: 1px solid var(--border-glass);
+        width: max-content;
     }
     .title {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-primary);
+        transition: color 0.2s ease;
     }
     .date {
-        font-size: 12px;
+        font-size: 13px;
         color: var(--text-muted);
         white-space: nowrap;
         padding-top: 2px;
     }
     .all-posts {
         display: inline-block;
-        margin-top: 16px;
-        font-size: 13px;
-        color: var(--teal-600);
-        font-weight: 500;
+        margin-top: 24px;
+        font-size: 14px;
+        color: var(--accent-main);
+        font-weight: 600;
+        transition: color 0.2s ease, text-shadow 0.2s ease;
     }
     .all-posts:hover {
-        color: var(--teal-800);
+        color: var(--accent-secondary);
+        text-shadow: 0 0 8px var(--accent-glow);
     }
 </style>
