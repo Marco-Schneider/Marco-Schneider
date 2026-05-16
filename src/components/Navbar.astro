@@ -8,6 +8,13 @@ import { SITE_TITLE } from '../consts';
         <a href="/" class="nav-logo">{SITE_TITLE}</a> 
     </div>
     <div class="nav-right">
+        <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+            <svg class="hamburger-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
         <ul class="nav-links">
             <li><a href="/#projects">Projects</a></li>
             <li><a href="/blog">Blog</a></li>
@@ -17,7 +24,33 @@ import { SITE_TITLE } from '../consts';
     </div>
 </nav>
 
+<script>
+    const setupMobileMenu = () => {
+        const btn = document.querySelector('.mobile-menu-btn');
+        const menu = document.querySelector('.nav-links');
+        
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                menu.classList.toggle('open');
+            });
 
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    btn.setAttribute('aria-expanded', 'false');
+                    menu.classList.remove('open');
+                });
+            });
+        }
+    };
+    
+    // Run on initial load
+    setupMobileMenu();
+    
+    // Run on ViewTransitions navigation if applicable
+    document.addEventListener('astro:after-swap', setupMobileMenu);
+</script>
 
 <style>
     .nav {
@@ -55,6 +88,13 @@ import { SITE_TITLE } from '../consts';
         list-style: none;
         font-size: 13px;
         color: var(--text-secondary);
+        margin: 0;
+        padding: 0;
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease, text-shadow 0.2s ease;
     }
     .nav-links a:hover {
         color: var(--accent-main);
@@ -69,5 +109,63 @@ import { SITE_TITLE } from '../consts';
     }
     #terminal-icon {
         filter: brightness(0) invert(1);
+    }
+    .mobile-menu-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 4px;
+        z-index: 101;
+        transition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-menu-btn:hover {
+        color: var(--accent-main);
+    }
+
+    /* Hide the hamburger button on desktop screens */
+    @media (min-width: 769px) {
+        .mobile-menu-btn {
+            display: none !important;
+        }
+    }
+
+    /* Show hamburger and modify nav-links on mobile */
+    @media (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 10px;
+            flex-direction: column;
+            gap: 0;
+            background: var(--bg-deep);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            padding: 16px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .nav-links.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+        .nav-links a {
+            display: block;
+            padding: 16px 24px;
+            font-size: 16px;
+        }
     }
 </style>
