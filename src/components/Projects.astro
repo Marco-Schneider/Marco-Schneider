@@ -6,6 +6,33 @@ interface Project {
     url: string;
 }
 
+const fallbackProjects: Project[] = [
+    {
+        name: 'AuctionCraft-Ledger',
+        desc: 'A lightweight World Of Warcraft addon that shows the total gold value of your active auctions',
+        tags: ['addon', 'world-of-warcraft', 'world-of-warcraft-addon'],
+        url: 'https://github.com/Marco-Schneider/AuctionCraft-Ledger',
+    },
+    {
+        name: 'LeetCode-csharp',
+        desc: 'LeetCode problem solutions built with C# 12 and .NET 8, emphasizing clean architecture, test-driven validation.',
+        tags: ['leetcode', 'leetcode-csharp', 'leetcode-solutions'],
+        url: 'https://github.com/Marco-Schneider/LeetCode-csharp',
+    },
+    {
+        name: 'SAFE-app',
+        desc: "Android mobile app that accompanies the SAFE cabinet. The SAFE cabinet was developed as a parcial requirement to obtain a bachelor's degree in Mechatronics Engineering",
+        tags: ['mobile-app', 'mobile-development', 'react-native'],
+        url: 'https://github.com/Marco-Schneider/SAFE-app',
+    },
+    {
+        name: 'qtr-sensors-esp-idf',
+        desc: 'Esp-idf component for the Pololu QTR reflectance sensors. This is an adaptation from the Arduino library for the same sensors.',
+        tags: ['C++'],
+        url: 'https://github.com/Marco-Schneider/qtr-sensors-esp-idf',
+    },
+];
+
 let projects: Project[] = [];
 
 try {
@@ -38,6 +65,11 @@ try {
     projects = fetchedProjects.filter((project): project is Project => project !== null);
 } catch (error) {
     console.error('Failed to fetch pinned projects:', error);
+}
+
+// Use fallback if fetch returned no results (rate limit, network error, etc.)
+if (projects.length === 0) {
+    projects = fallbackProjects;
 }
 ---
 
