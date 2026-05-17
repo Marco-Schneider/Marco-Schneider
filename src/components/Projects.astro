@@ -1,30 +1,44 @@
 ---
-const projects = [
-    {
-        name: 'Enterprise CI/CD Automation',
-        desc: 'Automated deployment pipelines for .NET and Angular microservices, reducing release time by 40%.',
-        tags: ['Azure DevOps', '.NET', 'Angular'],
-        url: '#',
-    },
-    {
-        name: 'Autonomous Rover System',
-        desc: 'Embedded control systems for a university robotics competition, featuring real-time sensor processing.',
-        tags: ['C++', 'ROS', 'Embedded Systems'],
-        url: '#',
-    },
-    {
-        name: 'Scalable Inventory Sync',
-        desc: 'High-performance API built with C# and SQL Server to handle millions of daily SKU updates.',
-        tags: ['C#', 'SQL Server', 'Azure'],
-        url: '#',
-    },
-    {
-        name: 'Developer Tooling Hub',
-        desc: 'Internal dashboard to manage technical debt and track agile team metrics across repositories.',
-        tags: ['Angular', 'TypeScript', 'GitHub API'],
-        url: '#',
-    },
-];
+interface Project {
+    name: string;
+    desc: string;
+    tags: string[];
+    url: string;
+}
+
+let projects: Project[] = [];
+
+try {
+    const profileRes = await fetch('https://github.com/Marco-Schneider');
+    const profileHtml = await profileRes.text();
+    
+    const pinnedRepos: string[] = [];
+    const repoRegex = /<span class="repo">([^<]+)<\/span>/g;
+    let match: RegExpExecArray | null;
+    
+    while ((match = repoRegex.exec(profileHtml)) !== null) {
+        pinnedRepos.push(match[1]);
+    }
+    
+    const fetchedProjects = await Promise.all(
+        pinnedRepos.map(async (repoName: string): Promise<Project | null> => {
+            const repoRes = await fetch(`https://api.github.com/repos/Marco-Schneider/${repoName}`);
+            if (!repoRes.ok) return null;
+            const repoData = await repoRes.json();
+            return {
+                name: repoData.name,
+                desc: repoData.description,
+                tags: repoData.topics && repoData.topics.length > 0 
+                    ? repoData.topics 
+                    : (repoData.language ? [repoData.language] : []),
+                url: repoData.html_url,
+            };
+        })
+    );
+    projects = fetchedProjects.filter((project): project is Project => project !== null);
+} catch (error) {
+    console.error('Failed to fetch pinned projects:', error);
+}
 ---
 
 <section id="projects" class="section">
