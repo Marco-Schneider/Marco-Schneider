@@ -1,63 +1,52 @@
-# Astro Starter Kit: Blog
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Marco%20Schneider&fontSize=80&animation=fadeIn&fontAlignY=38&desc=Mechatronics%20Engineer%20%7C%20Software%20Developer&descAlignY=60&descAlign=50" alt="Marco Schneider"/>
+</div>
 
-```sh
-npm create astro@latest -- --template blog
-```
+<h3 align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=4000&pause=1000&color=38BDF8&center=true&vCenter=true&width=500&lines=Building+Robots;Crafting+Clean+Code;Exploring+Game+Development;Playing+World+of+Warcraft" alt="Typing SVG" />
+</h3>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<p align="center">
+  <a href="https://github.com/Marco-Schneider">
+    <img src="https://img.shields.io/github/followers/Marco-Schneider?label=Followers&style=social" alt="GitHub Followers" />
+  </a>
+</p>
 
-Features:
+<br>
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+### About Me
 
-## 🚀 Project Structure
+I'm a Software engineer with a background in Mechatronics Engineering, bridging robotics, embedded systems, and full-stack application development.
 
-Inside of your Astro project, you'll see the following folders and files:
+I enjoy building scalable systems, exploring low-level technologies, and designing clean, maintainable software architectures, from backend APIs and cloud infrastructure to modern frontend experiences.
 
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+Outside of professional development, I’m interested in game development, automation, and algorithmic problem solving.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<br>
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Tech Stack
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+<div align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=c,cpp,cs,java,angular,react,azure,aws,linux,githubactions,git,github&perline=12" alt="Tech Stack" />
+  </a>
+</div>
 
-Any static assets, like images, can be placed in the `public/` directory.
+<br>
 
-## 🧞 Commands
+<!-- ### 📊 GitHub Activity -->
 
-All commands are run from the root of the project, from a terminal:
+<!-- <div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=marco-schneider&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Marco's GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=marco-schneider&theme=tokyonight&hide_border=true&background=0D1117" alt="Marco's GitHub Streak" />
+</div>
+<br>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=marco-schneider&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+</div>
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+<br> -->
 
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=100&section=footer" alt="Footer"/>
+</div> 
