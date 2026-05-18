@@ -1,47 +1,266 @@
 ---
-const skills = [
-    'React',
-    'TypeScript',
-    'Node.js',
-    'PostgreSQL',
-    'Docker',
-    'AWS',
-    'GraphQL',
-    'Prisma',
-    'Next.js',
+import { Icon } from 'astro-icon/components';
+
+interface TechItem {
+    name: string;
+    icon: string;
+    color?: string;
+}
+
+interface TechCategory {
+    title: string;
+    icon: string;
+    items: TechItem[];
+}
+
+const categories: TechCategory[] = [
+    {
+        title: 'FRONTEND',
+        icon: 'lucide:code',
+        items: [
+            { name: 'Angular', icon: 'logos:angular-icon' },
+            { name: 'NgRx', icon: 'simple-icons:ngrx', color: '#BA29B6' },
+            { name: 'React', icon: 'logos:react' },
+            { name: 'TypeScript', icon: 'logos:typescript-icon' },
+        ],
+    },
+    {
+        title: 'BACKEND',
+        icon: 'lucide:database',
+        items: [
+            { name: '.NET / C#', icon: 'logos:dotnet' },
+            { name: 'Java', icon: 'logos:java' },
+            { name: 'SQL Server', icon: 'simple-icons:microsoftsqlserver', color: '#CC292B' },
+            { name: 'REST APIs', icon: 'lucide:braces', color: '#888888' },
+        ],
+    },
+    {
+        title: 'CLOUD & DEVOPS',
+        icon: 'lucide:cloud',
+        items: [
+            { name: 'Azure', icon: 'logos:microsoft-azure' },
+            { name: 'AWS', icon: 'logos:aws' },
+            { name: 'Docker', icon: 'logos:docker-icon' },
+            { name: 'GitHub Actions', icon: 'logos:github-actions' },
+            { name: 'CI/CD', icon: 'lucide:infinity', color: '#888888' },
+            { name: 'Git', icon: 'logos:git-icon' },
+        ],
+    },
+    {
+        title: 'SYSTEMS & ENGINEERING',
+        icon: 'lucide:settings',
+        items: [
+            { name: 'Automation', icon: 'lucide:settings', color: '#888888' },
+            { name: 'System Design', icon: 'lucide:box', color: '#888888' },
+            { name: 'Embedded Systems', icon: 'lucide:cpu', color: '#888888' },
+            { name: 'Robotics', icon: 'lucide:bot', color: '#888888' },
+            { name: 'IoT', icon: 'lucide:radio', color: '#888888' },
+            { name: 'Linux', icon: 'logos:linux-tux' },
+        ],
+    },
 ];
 ---
 
-<section id="about" class="section">
-    <p class="section-label">Stack</p>
-    <div class="skills">
-        {skills.map((s) => <span class="skill">{s}</span>)}
+<section id="stack" class="section">
+    <div class="section-header">
+        <p class="section-label">
+            <Icon name="lucide:terminal" width="16" height="16" />
+            Technologies
+        </p>
+        <p class="section-desc">The tools and technologies I use to build, ship and scale reliable applications and systems.</p>
     </div>
+
+    {categories.map((cat, index) => (
+        <div class="category">
+            <h3 class="category-title">
+                <Icon name={cat.icon} width="16" height="16" />
+                {cat.title}
+            </h3>
+            <div class="marquee" data-direction={index % 2 === 0 ? 'right' : 'left'}>
+                {/* 4 copies to ensure infinite scroll fills ultra-wide screens */}
+                <div class="marquee-content">
+                    {cat.items.map((item) => (
+                        <div class="tech-card glass-panel">
+                            <Icon name={item.icon} width="32" height="32" class="tech-icon" style={item.color ? `color: ${item.color}` : ''} />
+                            <span class="tech-name">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    {cat.items.map((item) => (
+                        <div class="tech-card glass-panel">
+                            <Icon name={item.icon} width="32" height="32" class="tech-icon" style={item.color ? `color: ${item.color}` : ''} />
+                            <span class="tech-name">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    {cat.items.map((item) => (
+                        <div class="tech-card glass-panel">
+                            <Icon name={item.icon} width="32" height="32" class="tech-icon" style={item.color ? `color: ${item.color}` : ''} />
+                            <span class="tech-name">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    {cat.items.map((item) => (
+                        <div class="tech-card glass-panel">
+                            <Icon name={item.icon} width="32" height="32" class="tech-icon" style={item.color ? `color: ${item.color}` : ''} />
+                            <span class="tech-name">{item.name}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    ))}
 </section>
 
 <style>
     .section {
-        padding: 40px 0;
-        border-bottom: 0.5px solid var(--border);
+        padding: 48px 0;
+        margin: 20px 0;
     }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
     .section-label {
-        font-size: 10px;
-        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-main);
+        margin-bottom: 10px;
+    }
+    .section-label svg {
+        flex-shrink: 0;
+    }
+
+    .section-desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    .category {
+        margin-bottom: 32px;
+    }
+    .category:last-child {
+        margin-bottom: 0;
+    }
+
+    .category-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        color: var(--teal-400);
-        margin-bottom: 18px;
+        color: var(--accent-secondary);
+        margin-bottom: 14px;
     }
-    .skills {
+    .category-title svg {
+        opacity: 0.7;
+        flex-shrink: 0;
+    }
+
+    .marquee {
         display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
+        overflow: hidden;
+        gap: 16px;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        padding: 15px 0; /* Add padding for hover box-shadow */
     }
-    .skill {
+
+    .marquee-content {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+        width: max-content;
+    }
+
+    .marquee[data-direction="left"] .marquee-content {
+        animation: scroll-left 30s linear infinite;
+    }
+
+    .marquee[data-direction="right"] .marquee-content {
+        animation: scroll-right 30s linear infinite;
+    }
+
+    .marquee:hover .marquee-content {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - 16px));
+        }
+    }
+
+    @keyframes scroll-right {
+        from {
+            transform: translateX(calc(-100% - 16px));
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .tech-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 12px;
+        text-align: center;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        cursor: default;
+        width: 140px; /* Fixed width for carousel items */
+        flex-shrink: 0;
+    }
+    .tech-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-main);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 12px var(--accent-glow);
+    }
+
+    .tech-icon {
+        color: var(--accent-main);
+        opacity: 0.85;
+        transition: opacity 0.2s ease;
+    }
+    .tech-card:hover .tech-icon {
+        opacity: 1;
+    }
+
+    .tech-name {
         font-size: 12px;
-        padding: 5px 14px;
-        border-radius: 99px;
-        border: 0.5px solid var(--teal-100);
-        color: var(--teal-800);
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: color 0.2s ease;
+    }
+    .tech-card:hover .tech-name {
+        color: var(--text-primary);
+    }
+
+    @media (max-width: 600px) {
+        .tech-card {
+            width: 120px;
+            padding: 16px 8px;
+        }
+        .marquee {
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
     }
 </style>

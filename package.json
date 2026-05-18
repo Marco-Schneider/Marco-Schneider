@@ -15,7 +15,13 @@
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
+    "@iconify-json/logos": "^1.2.11",
+    "@iconify-json/lucide": "^1.2.108",
+    "@iconify-json/simple-icons": "^1.2.82",
+    "@iconify-json/vscode-icons": "^1.2.49",
+    "@lucide/astro": "^1.16.0",
     "astro": "^6.2.1",
+    "astro-icon": "^1.1.5",
     "sharp": "^0.34.3"
   }
 }
