@@ -11,7 +11,7 @@ const posts = (await getCollection('blog'))
     <div class="posts">
         {
             posts.map((post) => (
-                <a href={`/blog/${post.id}`} class="post">
+                <a href={`/blog/${post.id}`} class="post glass-panel">
                     <div class="post-left">
                         <span class="cat">{post.data.category}</span>
                         <span class="title">{post.data.title}</span>
@@ -45,7 +45,7 @@ const posts = (await getCollection('blog'))
     .posts {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
     .post {
         display: flex;
@@ -57,12 +57,12 @@ const posts = (await getCollection('blog'))
         color: inherit;
     }
     .post:hover {
-        transform: translateY(-2px);
+        transform: translateY(-4px);
         border-color: var(--accent-main);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 10px var(--accent-glow);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--accent-glow);
     }
     .post:hover .title {
-        color: var(--accent-main);
+        color: var(--text-primary);
     }
     .post-left {
         display: flex;

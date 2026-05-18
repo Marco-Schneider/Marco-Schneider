@@ -2,47 +2,110 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
-<BaseLayout title="Blog | João Silva" description="Writing about web development, architecture, and tooling.">
-  <section class="blog-index">
-    <h1>Blog</h1>
-    <div class="posts">
-      {posts.map((post) => (
-        <a href={`/blog/${post.id}`} class="post">
-          <div class="post-left">
-            <span class="cat">{post.data.category}</span>
-            <span class="title">{post.data.title}</span>
-            <span class="desc">{post.data.description}</span>
-          </div>
-          <span class="date">
-            {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-          </span>
-        </a>
-      ))}
-    </div>
-  </section>
+
+<BaseLayout
+    title="Blog | Marco Schneider"
+    description="Writing about web development, architecture, and tooling."
+>
+    <section class="blog-index">
+        <h1>Blog</h1>
+        <div class="posts">
+            {
+                posts.map((post) => (
+                    <a href={`/blog/${post.id}`} class="post glass-panel">
+                        <div class="post-left">
+                            <span class="cat">{post.data.category}</span>
+                            <span class="title">{post.data.title}</span>
+                            <span class="desc">{post.data.description}</span>
+                        </div>
+                        <span class="date">
+                            {post.data.pubDate.toLocaleDateString('en-US', {
+                                month: 'short',
+                                year: 'numeric',
+                            })}
+                        </span>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
-  .blog-index { padding: 48px 0; }
-  h1 { font-size: 28px; font-weight: 500; margin-bottom: 32px; }
-  .posts { display: flex; flex-direction: column; }
-  .post {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    padding: 18px 0; border-bottom: 0.5px solid var(--border); gap: 24px;
-  }
-  .post:first-child { border-top: 0.5px solid var(--border); }
-  .post:hover .title { color: var(--teal-600); }
-  .post-left { display: flex; flex-direction: column; gap: 5px; }
-  .cat {
-    display: inline-block; font-size: 10px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.07em;
-    background: var(--teal-50); color: var(--teal-800);
-    padding: 2px 8px; border-radius: 99px;
-  }
-  .title { font-size: 15px; font-weight: 500; }
-  .desc { font-size: 13px; color: var(--text-secondary); }
-  .date { font-size: 12px; color: var(--text-muted); white-space: nowrap; padding-top: 2px; }
+    .blog-index {
+        padding: 40px 0;
+        margin: 20px 0;
+    }
+    h1 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 32px;
+        color: var(--text-primary);
+    }
+    .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .post {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 24px;
+        transition:
+            transform 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+    .post:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-main);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--accent-glow);
+    }
+    .post:hover .title {
+        color: var(--text-primary);
+    }
+    .post-left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .cat {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--accent-secondary);
+        padding: 4px 10px;
+        border-radius: 99px;
+        border: 1px solid var(--border-glass);
+        width: max-content;
+    }
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+        transition: color 0.2s ease;
+    }
+    .desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-top: 4px;
+    }
+    .date {
+        font-size: 13px;
+        color: var(--text-muted);
+        white-space: nowrap;
+        padding-top: 4px;
+    }
 </style>
