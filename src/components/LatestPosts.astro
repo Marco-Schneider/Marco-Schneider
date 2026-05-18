@@ -11,7 +11,7 @@ const posts = (await getCollection('blog'))
     <div class="posts">
         {
             posts.map((post) => (
-                <a href={`/blog/${post.id}`} class="post glass-panel">
+                <a href={`/Marco-Schneider/blog/${post.id}`} class="post glass-panel">
                     <div class="post-left">
                         <span class="cat">{post.data.category}</span>
                         <span class="title">{post.data.title}</span>
@@ -26,7 +26,7 @@ const posts = (await getCollection('blog'))
             ))
         }
     </div>
-    <a href="/blog" class="all-posts">All posts →</a>
+    <a href="/Marco-Schneider/blog" class="all-posts">All posts →</a>
 </section>
 
 <style>
