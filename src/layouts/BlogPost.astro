@@ -73,20 +73,20 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         font-size: 16px;
         line-height: 1.8;
     }
-    .post-body h2 {
+    .post-body :global(h2) {
         font-size: 22px;
         font-weight: 500;
         margin: 2rem 0 0.75rem;
     }
-    .post-body h3 {
+    .post-body :global(h3) {
         font-size: 18px;
         font-weight: 500;
         margin: 1.5rem 0 0.5rem;
     }
-    .post-body p {
+    .post-body :global(p) {
         margin-bottom: 1.25rem;
     }
-    .post-body pre {
+    .post-body :global(pre) {
         background: var(--bg-surface);
         border: 0.5px solid var(--border);
         border-radius: 8px;
@@ -94,7 +94,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         overflow-x: auto;
         margin-bottom: 1.25rem;
     }
-    .post-body img {
+    .post-body :global(img) {
         max-width: 100%;
         height: auto;
         border-radius: 12px;
@@ -103,11 +103,11 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         border: 1px solid var(--border-glass);
     }
-    .post-body code {
+    .post-body :global(code) {
         font-family: monospace;
         font-size: 14px;
     }
-    .post-body a {
+    .post-body :global(a) {
         color: var(--accent-main);
         text-decoration: underline;
     }
