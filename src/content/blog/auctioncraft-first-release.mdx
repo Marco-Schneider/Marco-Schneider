@@ -1,0 +1,177 @@
+---
+title: 'Building My First World of Warcraft Addon'
+description: 'A deep dive into building my first World of Warcraft addon, from learning Lua and WoW UI events to creating AuctionCraft – Ledger, a lightweight Auction House utility addon.'
+pubDate: 'Mar 18 2025'
+heroImage: '../../assets/auctioncraft-first-release/AuctionCraft-Ledger-Banner.png'
+category: 'World of Warcrat'
+---
+
+import { Image } from 'astro:assets';
+import previewImg from '../../assets/auctioncraft-first-release/preview.PNG';
+import debugImg from '../../assets/auctioncraft-first-release/WoWScrnShot_050526_180653.jpg';
+import debugEtraceImg from '../../assets/auctioncraft-first-release/WoWScrnShot_050526_180716.jpg';
+import curseForgeImg from '../../assets/auctioncraft-first-release/CurseForge.PNG';
+import bannerImg from '../../assets/auctioncraft-first-release/AuctionCraft-Ledger-Banner.png';
+
+
+## Introduction
+
+&nbsp;&nbsp;&nbsp;&nbsp;Recently, I decided to start learning how to develop addons for World of Warcraft. Since I was a kid, I’ve always been fascinated by development and game systems. One of my earliest experiences was experimenting with the Warcraft III map editor, changing abilities, creating custom triggers, and trying to understand how games worked behind the scenes.
+
+<br/>
+So I thought:
+<br/><br/>
+
+``
+What better way to learn something new than by building something for a game I’ve been playing since 2011?
+``
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;What started as a small side project quickly became an incredibly fun technical deep dive into World of Warcraft’s addon ecosystem.
+<br/><br/>
+
+--
+
+## The Initial Idea
+
+The idea itself was surprisingly simple:
+
+<br/>
+
+``How much gold will I actually earn from my active auctions?``
+
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp;There are already addons capable of calculating this, and many are significantly more sophisticated than what I built. But for me, the goal was never to compete with established addons immediately.
+
+&nbsp;&nbsp;&nbsp;&nbsp;I strongly believe the best way to learn a new technology is by building something that solves a problem you personally care about.
+
+&nbsp;&nbsp;&nbsp;&nbsp;That philosophy made the project much more engaging from the beginning.
+
+<br/><br/>
+
+---
+
+<Image src={previewImg} alt="AuctionCraft – Ledger Total Buyout Value" width={670} />
+
+---
+
+<br/><br/>
+
+## Learning the WoW Addon Ecosystem
+
+&nbsp;&nbsp;&nbsp;&nbsp;One of the most interesting parts of the process was understanding how World of Warcraft’s UI system actually works.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Unlike traditional application development, WoW addons are heavily event-driven. That meant learning:
+
+```markdown
+* how the game dispatches interface events
+* how frames behave
+* how to inspect UI elements
+* and how addons interact with Blizzard’s API
+```
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;I spent a good amount of time exploring debugging and inspection tools like: `fstack` and `etrace`.
+
+&nbsp;&nbsp;&nbsp;&nbsp;These tools became essential for understanding what was happening behind the scenes whenever the Auction House UI updated.
+
+&nbsp;&nbsp;&nbsp;&nbsp;At the same time, I also had to get comfortable with Lua, which was a completely new language for me.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Despite being lightweight and relatively simple syntactically, Lua has its own patterns and quirks, especially inside WoW’s API ecosystem.
+
+<br/><br/>
+
+---
+
+<Image src={debugImg} alt="WoW UI debugging tools" width={670} />
+
+---
+
+<br/><br/>
+
+## Building AuctionCraft – Ledger
+
+&nbsp;&nbsp;&nbsp;&nbsp;The result of this exploration became **AuctionCraft – Ledger**.
+
+The addon is intentionally lightweight:
+```markdown
+* it listens for Auction House updates
+* gathers active auction information
+* and calculates the total gold value of listed auctions in real time
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;The goal was simplicity and clarity.
+
+&nbsp;&nbsp;&nbsp;&nbsp;I wanted something useful that integrated naturally into the Auction House interface without adding unnecessary complexity.
+
+<br/><br/>
+
+---
+
+<Image src={debugEtraceImg} alt="AuctionCraft – Ledger Before and After" width={670} />
+
+---
+
+<br/><br/>
+
+## Looking Ahead
+
+&nbsp;&nbsp;&nbsp;&nbsp;Although the addon is currently simple, I already see it as the foundation for something bigger.
+
+&nbsp;&nbsp;&nbsp;&nbsp;My plan is to gradually expand **AuctionCraft** into a broader ecosystem of Auction House tools and quality-of-life utilities.
+
+Some areas I’m interested in exploring next:
+```markdown
+* localization/internationalization support
+* historical auction analytics
+* profit tracking
+* multi-character support
+* deeper Auction House insights
+```
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;One of the things I enjoy most about projects like this is how they naturally push me into unfamiliar territory.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Even a relatively small addon ended up teaching me about:
+```markdown
+* event-driven systems
+* UI inspection
+* reverse engineering workflows
+* Lua scripting
+* and game interface architecture
+```
+
+<br /><br />
+
+---
+
+<Image src={curseForgeImg} alt="AuctionCraft roadmap" width={670} />
+
+---
+
+<br/><br/>
+
+## Final Thoughts
+
+&nbsp;&nbsp;&nbsp;&nbsp;This project reminded me why I enjoy building things in the first place.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Sometimes the best learning experiences don’t come from tutorials or courses, they come from creating something small, useful, and personally meaningful.
+
+&nbsp;&nbsp;&nbsp;&nbsp;AuctionCraft – Ledger may have started as a simple gold calculator, but it became an opportunity to explore a completely new development environment while building something connected to a game I’ve loved for years.
+
+&nbsp;&nbsp;&nbsp;&nbsp;And honestly, that made the process incredibly rewarding.
+
+<br/>
+
+--
+
+<br/>
+
+## Links
+
+### GitHub Repository
+
+[GitHub Repository](https://github.com/YOUR_USERNAME/auctioncraft-ledger)
+
+### CurseForge Page
+[CurseForge Page](https://www.curseforge.com/wow/addons/auctioncraft-ledger)
